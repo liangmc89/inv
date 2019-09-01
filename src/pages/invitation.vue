@@ -902,7 +902,7 @@ export default {
       if (this.contentSwiper.isEnd) {
         this.swiper.slideNext();
       }
-      if (this.contentSwiper.isBeginning) {
+      if (this.contentSwiper.isBeginning)  {
         this.swiper.slidePrev();
       }
     },

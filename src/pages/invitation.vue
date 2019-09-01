@@ -100,24 +100,7 @@
               </div>
             </div>
           </div>
-        </swiper-slide>
-        <!-- <swiper-slide class="inv-bg ps">
-          <div class="bd1">
-            <div class="bd2">
-              <div class="slide-box">
-                <div class="sld-logo">
-                  <q-img src='statics/image/meeting_logo.png'></q-img>
-                </div>
-                <div class="sld-title slt1">
-                  <div class="sld-c">日程安排</div>
-                </div>
-                <div class="sld-lbox " >
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </swiper-slide>-->
+        </swiper-slide>        
         <swiper-slide class="inv-bg ps">
           <div class="bd1">
             <div class="bd2">
@@ -145,7 +128,7 @@
                               <span>信宏业</span>
                             </p>
                             <p>演讲题目：
-                              <span class="sss">（确认中）</span>
+                              <span class="sss">智慧推进智慧文旅建设</span>
                             </p>
                           </div>
                           <div class="yj-title">
@@ -259,7 +242,7 @@
                   <q-input ref='phone' bg-color="white" outlined clearable clear-icon="close" lazy-rules :rules="[val=>!!(/^1[3456789]\d{9}$/.test(val))||'请输入正确的手机号码']" v-model="phone" label="电话" dense class="full-width fi" />
                   <q-input ref='company' bg-color="white" outlined clearable clear-icon="close" lazy-rules :rules="[val => !!val || '请输入您的公司全称']" v-model="company" label="公司" dense class="full-width fi" />
                   <q-input ref='position' bg-color="white" outlined clearable clear-icon="close" lazy-rules :rules="[val => !!val || '请输入您的职位']" v-model="position" label="职位" dense class="full-width fi" />
-                  <q-select ref='way' bg-color='white' outlined clearable clear-icon="close" lazy-rules :rules="[val => !!val || '请选择一条学习路线']" v-model="way" dense class='full-width fi' :options="ways" label="路线" />
+                  <q-select style="display:none" ref='way' bg-color='white' outlined clearable clear-icon="close" lazy-rules :rules="[val => !!val || '请选择一条学习路线']" v-model="way" dense class='full-width fi' :options="ways" label="路线" />
                 </div>
                 <div class="sld-form-des sfd1">
                   <p class="ptt">会务组联系人:</p>
@@ -619,7 +602,7 @@ export default {
   name: "Invitation",
   data () {
     return {
-      way: "A",
+      way: { label: "A路线：张江国际创新港", value: "A" },
       payType: "2",
       name: "",
       phone: "",
@@ -929,7 +912,7 @@ export default {
       this.phone = "";
       this.company = "";
       this.position = "";
-      this.way = "";
+      // this.way = "";
       this.$refs.name.resetValidation();
       this.$refs.phone.resetValidation();
       this.$refs.company.resetValidation();
